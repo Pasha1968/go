@@ -21,6 +21,11 @@ func birth(man person) {
 	year := currentTime.Year()
 	fmt.Println(year - man.age)
 }
+func (man *person) birthmet() int {
+	currentTime := time.Now()
+	year := currentTime.Year()
+	return year - man.age
+}
 func main() {
 	var me = worker{
 		jobname:  "student",
@@ -47,4 +52,5 @@ func main() {
 	she := new(worker)
 	fmt.Println(she.man.age)
 	birth(me.man)
+	fmt.Println("method:", me.man.birthmet())
 }
