@@ -18,29 +18,29 @@ type worker struct {
 type actress struct {
 	creature     worker
 	performances int
-	theater      string
+	theater      string `example:"Grand_Theatre"`
 }
 type artist struct {
 	creature         worker
 	performances     int
-	genre            []string
-	famouse_pictures []string
+	genre            []string `example:"genre?"`
+	famouse_pictures []string `example:"picture_name"`
 }
 type student struct {
 	creature      worker
 	course        int
-	university    string
+	university    string `example:"DNU"`
 	Average_score float64
 }
 type bricklayer struct {
 	creature            worker
-	days_without_salary int
-	mine                string
+	days_without_salary int `example:"3"`
+	mine                string `example:"mine_name"`
 }
 type butcher struct {
 	creature worker
-	needed   bool
-	shop     string
+	needed   bool   `example:"true"`
+	shop     string `example:"shopname"`
 }
 
 func printSlice(s []int) {
