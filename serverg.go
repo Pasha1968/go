@@ -76,8 +76,15 @@ func structure(w http.ResponseWriter, r *http.Request) {
 					fmt.Println(w, "can't transfer ", err.Error())
 				}
 				fmt.Println(id)
-				fmt.Println(data.records[id])
-				fmt.Fprintf(w, "Name:%s , Age:%d", data.records[id].Name, data.records[id].Age)
+				if id == 0 {
+					for i := 1; i < unic; i++ {
+						fmt.Fprintf(w, " id:%d \n Name:%s , Age:%d \n", i, data.records[i].Name, data.records[i].Age)
+					}
+					fmt.Println(data)
+				} else {
+					fmt.Println(data.records[id])
+					fmt.Fprintf(w, "Name:%s , Age:%d", data.records[id].Name, data.records[id].Age)
+				}
 			}
 		}
 	}
